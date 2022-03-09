@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const FilterByName = () => {
   const [{ theme, isDarkTheme }, toggleTheme] = useContext(ThemeContext);
 
-  const url = `http://pokeapi.co/api/v2/pokemon/`;
+  const url = `https://pokeapi.co/api/v2/pokemon/`;
 
   const [filteredPokemon, setFilteredPokemon] = useState({});
   const [isError, setIsError] = useState(false);
@@ -21,7 +21,9 @@ const FilterByName = () => {
     setIsError(false);
 
     try {
-      const res = await fetch(`${url}${enteredName}`);
+      const enteredNameTrimmed = enteredName.trim().toLowerCase();
+
+      const res = await fetch(`${url}${enteredNameTrimmed}`);
 
       if (!res.ok) {
         window.alert(`Pokemon not found.`);
@@ -63,8 +65,6 @@ const FilterByName = () => {
 
     setIsSubmited(true);
   };
-
-  console.log(filteredPokemon);
 
   return (
     <div

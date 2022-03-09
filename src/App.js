@@ -73,6 +73,7 @@ function App() {
   const [isFilterType, setIsFilterType] = useState(false);
 
   const showFilteredByType = () => {
+    window.scrollTo(0, 0);
     setIsFilterName(false);
     setIsFilterType(!isFilterType);
   };

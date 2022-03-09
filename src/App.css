@@ -127,6 +127,7 @@ table {
 .body,
 html {
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -177,7 +178,7 @@ button {
   padding: 10px 15px;
   text-align: center;
   transition: 200ms;
-  width: 140px;
+  width: 150px;
   height: 40px;
   box-sizing: border-box;
   border: 0;

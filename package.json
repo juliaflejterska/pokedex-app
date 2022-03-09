@@ -2,7 +2,7 @@
   "name": "pokedex-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/juliaflejterska/pokedex-app.git",
+  "homepage": "https://juliaflejterska.github.io/pokedex-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
