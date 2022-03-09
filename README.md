@@ -8,12 +8,13 @@ POKEDEX APP is a React application that was created for the recruitment task. It
 
 ---
 
-When you launch it for the first time, a list of 20 pokemon is showed on the screen. Of course you can load more of them - there is a special button for that.
+✨ Initially, a list of 20 pokemon is displayed on the screen. Of course you can load more of them - there is a special button for that.
 
+✨ When you hover your mouse over one of the cards, you can see basic information about the selected creature: its name and type. When you click on it, its weight and height also appear.
 
-Moreover, POKEDEX APP allows you to sort the displayed pokemon by their type. You can also search for any pokemon that is available in ‘Pokémon API’ by entering its name in the special field provided for this.
+✨ Moreover, POKEDEX APP allows you to sort the displayed pokemon by their type. You can also search for any pokemon that is available in ‘Pokémon API’ by entering its name in the special field provided for this.
 
-By clicking on the moon icon, you can change the mode from light to dark and vice versa.
+✨ By clicking on the moon icon, you can change the mode from light to dark and vice versa.
 
 ---
 
