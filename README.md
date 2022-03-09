@@ -17,4 +17,4 @@ By clicking on the moon icon, you can change the mode from light to dark and vic
 
 ---
 
-The animations and transitions used come from the Framer Motion library.
+The animations and transitions used are from the Framer Motion library.
