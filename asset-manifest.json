@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/juliaflejterska/pokedex-app.git/static/css/main.00743715.css",
-    "main.js": "/juliaflejterska/pokedex-app.git/static/js/main.2426c051.js",
-    "index.html": "/juliaflejterska/pokedex-app.git/index.html",
-    "main.00743715.css.map": "/juliaflejterska/pokedex-app.git/static/css/main.00743715.css.map",
-    "main.2426c051.js.map": "/juliaflejterska/pokedex-app.git/static/js/main.2426c051.js.map"
+    "main.css": "/pokedex-app/static/css/main.00743715.css",
+    "main.js": "/pokedex-app/static/js/main.2426c051.js",
+    "index.html": "/pokedex-app/index.html",
+    "main.00743715.css.map": "/pokedex-app/static/css/main.00743715.css.map",
+    "main.2426c051.js.map": "/pokedex-app/static/js/main.2426c051.js.map"
   },
   "entrypoints": [
     "static/css/main.00743715.css",
