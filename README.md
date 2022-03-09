@@ -1,4 +1,4 @@
-<h1>  POKEDEX APP  </h1>
+<h1>  POKEDEX APP - gotta catch'em all!  </h1>
 
 <h3> https://juliaflejterska.github.io/pokedex-app/ </h3>
 
