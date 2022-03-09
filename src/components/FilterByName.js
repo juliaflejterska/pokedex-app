@@ -1,0 +1,112 @@
+import { useState, useContext } from "react";
+import Pokemon from "./Pokemon";
+import { ThemeContext } from "../contexts/theme-context";
+import { motion } from "framer-motion";
+
+const FilterByName = () => {
+  const [{ theme, isDarkTheme }, toggleTheme] = useContext(ThemeContext);
+
+  const url = `http://pokeapi.co/api/v2/pokemon/`;
+
+  const [filteredPokemon, setFilteredPokemon] = useState({});
+  const [isError, setIsError] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+
+  const fetchFilteredPokemon = async (enteredName) => {
+    if (!enteredName || enteredName.trim() === "") {
+      setIsError(true);
+      window.alert("This field cannot be empty. Please enter valid name.");
+      return;
+    }
+    setIsError(false);
+
+    try {
+      const res = await fetch(`${url}${enteredName}`);
+
+      if (!res.ok) {
+        window.alert(`Pokemon not found.`);
+        setIsError(true);
+      }
+
+      const data = await res.json();
+
+      const formatedPokemon = {
+        name: data.name,
+        type: data.types[0].type.name,
+        sprites: data.sprites.other.dream_world.front_default,
+        weight: data.weight,
+        height: data.height,
+      };
+
+      setFilteredPokemon(formatedPokemon);
+    } catch (err) {
+      setIsError(true);
+      setErrMsg("Pokemon not found.");
+      console.error(errMsg);
+    }
+  };
+
+  const [enteredName, setEnteredName] = useState("");
+
+  const [isSubmited, setIsSubmited] = useState(false);
+
+  const handleChange = (e) => {
+    setEnteredName(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetchFilteredPokemon(enteredName);
+
+    setEnteredName("");
+
+    setIsSubmited(true);
+  };
+
+  console.log(filteredPokemon);
+
+  return (
+    <div
+      className="pokedex"
+      style={{ backgroundColor: theme.backgroundColor, color: theme.color }}
+    >
+      <motion.form
+        onSubmit={handleSubmit}
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1 }}
+        transition={{
+          duration: 0.1,
+        }}
+      >
+        <h1>POKEDEX</h1>
+        <input
+          type="text"
+          value={enteredName || ""}
+          onChange={handleChange}
+          placeholder="enter name"
+        ></input>
+        <button>SEARCH</button>
+      </motion.form>
+
+      {isSubmited && (
+        <>
+          {Object.keys(filteredPokemon).length !== 0 && (
+            <div>
+              <Pokemon
+                name={filteredPokemon.name}
+                name={filteredPokemon.name}
+                type={filteredPokemon.type}
+                sprites={filteredPokemon.sprites}
+                weight={filteredPokemon.weight}
+                height={filteredPokemon.height}
+              />
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+};
+
+export default FilterByName;
